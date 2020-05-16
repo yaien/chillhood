@@ -1,7 +1,7 @@
 import axios from "axios"
 import items from "./items"
 import user from "./user"
-import settings from "./settings"
+import settings from "../public/settings"
 import { Auth, Config } from "../interfaces"
 
 export default ({ auth, config }: SessionOptions) => {
@@ -16,8 +16,7 @@ export default ({ auth, config }: SessionOptions) => {
     auth,
     config,
     items: items(http),
-    user: user(http),
-    settings: settings(http),
+    user: user(http)
   }
 }
 
