@@ -1,0 +1,32 @@
+{
+  "name": "chillhood",
+  "version": "1.0.0",
+  "description": "chillhood cloth store api client",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaien/chillhood.git"
+  },
+  "keywords": [
+    "chillhood",
+    "api",
+    "client"
+  ],
+  "author": "Stevenson Marquez Rangel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaien/chillhood/issues"
+  },
+  "homepage": "https://github.com/yaien/chillhood#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  }
+}

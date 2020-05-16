@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ES3",
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "outDir": "dist",
+        "esModuleInterop": true,
+        "module": "CommonJS"   
+    },
+    "include": ["./src"]
+}
