@@ -68,6 +68,12 @@ export interface Cart {
   items: CartItem[];
 }
 
+export interface CartItemBase {
+  id: string;
+  quantity: number;
+  size: string;
+}
+
 export interface CartItem {
   id: string;
   name: string;
