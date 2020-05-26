@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { Guest, CartItem, Cart, CartItemBase } from "../interfaces";
+import { Guest, Cart, CartItemBase } from "../interfaces";
 
 export default (http: AxiosInstance) => ({
   async get(id: string): Promise<Guest> {
@@ -19,7 +19,7 @@ export default (http: AxiosInstance) => ({
       return res.data;
     },
     async remove(guestId: string, itemId: string): Promise<Cart> {
-      let url = `/api/vi/public/guests/${guestId}/items/${itemId}`;
+      let url = `/api/v1/public/guests/${guestId}/items/${itemId}`;
       let res = await http.delete(url);
       return res.data;
     },
