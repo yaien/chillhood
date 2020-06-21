@@ -56,6 +56,13 @@ export interface CloudinarySettings {
   preset: string;
 }
 
+export interface EpaycoSettings {
+  key: string;
+  test: boolean;
+  response: string;
+  confirmation: string;
+}
+
 export interface Guest {
   id: string;
   cart: Cart | null;
@@ -80,6 +87,33 @@ export interface CartItem {
   price: number;
   quantity: number;
   size: string;
+}
+
+export interface Shipping {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  province: string;
+  country: string;
+  postalCode: string;
+}
+
+export enum Status {
+  Created = "created",
+  Accepted = "accepted",
+  Rejected = "rejected",
+  Pending = "pending",
+}
+
+export interface Invoice {
+  id: string;
+  ref: string;
+  cart: Cart;
+  shipping: Shipping;
+  status: Status;
+  createdAt: number;
 }
 
 export type Session = ReturnType<typeof session>;

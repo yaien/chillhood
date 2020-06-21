@@ -5,6 +5,7 @@ import session from "./session";
 import guests from "./public/guests";
 import { Config, Root, Auth } from "./interfaces";
 import settings from "./public/settings";
+import invoices from "./public/invoices";
 
 export default function store(config: Config) {
   const root: Root = {
@@ -16,6 +17,7 @@ export default function store(config: Config) {
     items: items(root.http),
     guests: guests(root.http),
     settings: settings(root.http),
+    invoices: invoices(root.http),
     session: (auth: Auth) => session({ auth, config }),
     ...auth(root),
   };
