@@ -87,6 +87,7 @@ export interface CartItem {
   price: number;
   quantity: number;
   size: string;
+  picture: Picture;
 }
 
 export interface Shipping {
