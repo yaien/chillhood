@@ -9,7 +9,7 @@ export default (http: AxiosInstance) => ({
   },
   async check(epaycoRef: string) {
     const res = await http.get<Invoice>("/api/v1/public/epayco/response", {
-      params: { ref_epayco: epaycoRef },
+      params: { ref_payco: epaycoRef },
     });
     return res.data;
   },
