@@ -1,6 +1,6 @@
 {
   "name": "chillhood",
-  "version": "1.0.2",
+  "version": "1.0.20",
   "description": "chillhood cloth store api client",
   "main": "dist/index.js",
   "scripts": {
