@@ -90,7 +90,17 @@ export interface CartItem {
   picture: Picture;
 }
 
-export interface Shipping {
+export interface Transport {
+  provider: string
+  guide: string
+}
+
+export enum ShippingStatus {
+  Preparing = "preparing",
+  Sended = "sended"
+}
+
+export interface ShippingBase {
   name: string;
   email: string;
   phone: string;
@@ -101,7 +111,19 @@ export interface Shipping {
   postalCode: string;
 }
 
-export enum Status {
+export interface ShippingPrepared {
+  status: ShippingStatus.Preparing
+}
+
+export interface ShippingSended {
+  status: ShippingStatus.Sended
+  transport: Transport
+}
+
+
+export type Shipping = ShippingBase | ShippingSended | ShippingPrepared
+
+export enum InvoiceStatus {
   Created = "created",
   Accepted = "accepted",
   Rejected = "rejected",
@@ -113,7 +135,7 @@ export interface Invoice {
   ref: string;
   cart: Cart;
   shipping: Shipping;
-  status: Status;
+  status: InvoiceStatus;
   createdAt: number;
 }
 
