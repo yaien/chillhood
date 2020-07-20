@@ -111,11 +111,11 @@ export interface ShippingBase {
   postalCode: string;
 }
 
-export interface ShippingPrepared {
+export interface ShippingPrepared extends ShippingBase {
   status: ShippingStatus.Preparing
 }
 
-export interface ShippingSended {
+export interface ShippingSended extends ShippingBase {
   status: ShippingStatus.Sended
   transport: Transport
 }
