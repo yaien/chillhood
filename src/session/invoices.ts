@@ -15,7 +15,7 @@ export default (http: AxiosInstance) => ({
         return res.data
     },
     async setTransport(id: string, transport: Transport): Promise<Invoice> {
-        const res = await http.patch<Invoice>("/api/v1/invoices/" + id, transport)
+        const res = await http.patch<Invoice>(`/api/v1/invoices/${id}/transport`, transport)
         return res.data;
     }
 })
