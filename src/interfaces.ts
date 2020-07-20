@@ -109,6 +109,7 @@ export interface ShippingBase {
   province: string;
   country: string;
   postalCode: string;
+  status: ShippingStatus
 }
 
 export interface ShippingPrepared extends ShippingBase {
