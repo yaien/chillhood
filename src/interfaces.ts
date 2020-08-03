@@ -122,7 +122,7 @@ export interface ShippingSended extends ShippingBase {
 }
 
 
-export type Shipping = ShippingBase | ShippingSended | ShippingPrepared
+export type Shipping = ShippingSended | ShippingPrepared
 
 export enum InvoiceStatus {
   Created = "created",
