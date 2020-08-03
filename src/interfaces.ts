@@ -1,5 +1,6 @@
 import { AxiosInstance } from "axios";
 import session from "./session";
+import { FindParams } from "./session/invoices";
 
 export interface Root {
   config: Config;
@@ -140,5 +141,7 @@ export interface Invoice {
   status: InvoiceStatus;
   createdAt: number;
 }
+
+export type InvoiceFindParams = FindParams
 
 export type Session = ReturnType<typeof session>;
