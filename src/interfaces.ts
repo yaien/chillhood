@@ -129,6 +129,7 @@ export enum InvoiceStatus {
   Accepted = "accepted",
   Rejected = "rejected",
   Pending = "pending",
+  Completed = "completed"
 }
 
 export interface Invoice {
