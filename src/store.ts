@@ -6,6 +6,8 @@ import guests from "./public/guests";
 import { Config, Root, Auth } from "./interfaces";
 import settings from "./public/settings";
 import invoices from "./public/invoices";
+import cities from "./public/cities";
+import provinces from "./public/provinces";
 
 export default function store(config: Config) {
   const root: Root = {
@@ -18,6 +20,8 @@ export default function store(config: Config) {
     guests: guests(root.http),
     settings: settings(root.http),
     invoices: invoices(root.http),
+    cities: cities(root.http),
+    provinces: provinces(root.http),
     session: (auth: Auth) => session({ auth, config }),
     ...auth(root),
   };

@@ -1,12 +1,12 @@
 import { AxiosInstance } from "axios";
 import { Invoice, Transport } from "../interfaces";
-export interface FindParams {
+export interface FindInvoiceOptions {
     search?: string
     status?: string
 }
 
 export default (http: AxiosInstance) => ({
-    async find(params?: FindParams): Promise<Invoice[]> {
+    async find(params?: FindInvoiceOptions): Promise<Invoice[]> {
         const res = await http.get<Invoice[]>("/api/v1/invoices", { params })
         return res.data
     },

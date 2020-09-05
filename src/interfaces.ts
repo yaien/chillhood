@@ -1,6 +1,9 @@
 import { AxiosInstance } from "axios";
 import session from "./session";
-import { FindParams } from "./session/invoices";
+
+export { FindInvoiceOptions } from "./session/invoices";
+export { FindCityOptions } from "./public/cities";
+export { FindProvinceOptions } from "./public/provinces";
 
 export interface Root {
   config: Config;
@@ -92,13 +95,13 @@ export interface CartItem {
 }
 
 export interface Transport {
-  provider: string
-  guide: string
+  provider: string;
+  guide: string;
 }
 
 export enum ShippingStatus {
   Preparing = "preparing",
-  Sended = "sended"
+  Sended = "sended",
 }
 
 export interface ShippingBase {
@@ -110,27 +113,26 @@ export interface ShippingBase {
   province: string;
   country: string;
   postalCode: string;
-  status: ShippingStatus
+  status: ShippingStatus;
 }
 
 export interface ShippingPrepared extends ShippingBase {
-  status: ShippingStatus.Preparing
+  status: ShippingStatus.Preparing;
 }
 
 export interface ShippingSended extends ShippingBase {
-  status: ShippingStatus.Sended
-  transport: Transport
+  status: ShippingStatus.Sended;
+  transport: Transport;
 }
 
-
-export type Shipping = ShippingSended | ShippingPrepared
+export type Shipping = ShippingSended | ShippingPrepared;
 
 export enum InvoiceStatus {
   Created = "created",
   Accepted = "accepted",
   Rejected = "rejected",
   Pending = "pending",
-  Completed = "completed"
+  Completed = "completed",
 }
 
 export interface Invoice {
@@ -142,6 +144,17 @@ export interface Invoice {
   createdAt: number;
 }
 
-export type InvoiceFindParams = FindParams
+export interface Province {
+  id: string;
+  name: string;
+}
+
+export interface City {
+  id: string;
+  name: string;
+  shipment: number;
+  days: number;
+  province: Province;
+}
 
 export type Session = ReturnType<typeof session>;
