@@ -53,6 +53,9 @@ export interface Item {
 export interface Size {
   label: string;
   existence: number;
+  body: number;
+  chest: number;
+  sleeve: number;
 }
 
 export interface CloudinarySettings {
